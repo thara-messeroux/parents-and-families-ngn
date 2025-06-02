@@ -1097,6 +1097,24 @@ cursor: pointer;
     font-size: 14px;
     color: #333;
   }
+
+  /* Make the items look like links */
+
+  .extra-links li {
+    margin-bottom: 6px;
+    list-style: disc;
+    position: relative;
+    padding-left: 10px;
+    color: #333;
+    cursor: pointer;         /* 👈 makes it feel clickable */
+    transition: color 0.3s;  /* 👈 makes it animate smoothly */
+  }
+
+  .extra-links li:hover {
+    color: #c8102e;  /* 🔴 Northeastern red on hover */
+  }
+  
+  
   
   .campus-card:hover .extra-links {
     display: block;
