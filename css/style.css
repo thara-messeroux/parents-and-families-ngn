@@ -552,3 +552,156 @@ html, body {
     }
   }
   
+  
+  /* Make sure header can hold the menu */
+  .second-header {
+    position: relative;
+  }
+
+
+
+  /* === 🌐 GENERAL LAYOUT & STYLING === */
+
+/* Basic reset and global settings */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+
+.browse-item {
+  flex: 1 1 45%; /* 📐 Two-column layout */
+  min-width: 240px;
+  margin-bottom: 16px;
+}
+
+.browse-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: black;
+}
+
+.browse-item p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.browse-item a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c8102e;
+  text-decoration: none;
+}
+
+.browse-item a:hover {
+  text-decoration: underline;
+}
+
+/* 📌 Position dropdown correctly inside header */
+.second-header.desktop-header {
+  position: relative;
+}
+
+/* Existing header, nav, hero and responsive styles follow here... */
+
+.browse-section {
+max-width: 1200px;
+margin: 0 auto 30px auto;
+padding-bottom: 10px;
+border-bottom: 1px solid #eee;
+}
+
+.browse-section h4 {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 6px;
+color: #111;
+}
+
+.browse-section p {
+font-size: 16px;
+color: #444;
+margin: 0;
+}
+
+.browse-section:hover {
+background-color: #f8f8f8;
+border-radius: 6px;
+padding: 6px;
+transition: background 0.2s ease;
+}
+
+/* 🌐 Browse Dropdown (Full Width + Aligned to Hero Text) */
+.browse-dropdown {
+  display: none;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  z-index: 1;
+  position: relative; /* stays in flow to push content */
+  
+}
+
+
+.browse-dropdown.show {
+display: block;
+}
+
+.browse-section {
+max-width: 1400px;        /* 🧠 Match the max-width of .hero-split */
+margin: 0 auto 30px auto; /* 🧠 Center it just like the main content */
+padding: 0 40px 10px 40px; /* ⬅️ Match .hero-split horizontal padding */
+border-bottom: 1px solid #eee;
+}
+  
+.browse-section {
+padding-left: 40px;
+padding-right: 40px;
+}
+
+
+.browse-section h4 {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 6px;
+color: #111;
+}
+
+.browse-section p {
+font-size: 16px;
+color: #444;
+margin: 0;
+}
+
+.browse-section:hover {
+background-color: #f8f8f8;
+border-radius: 6px;
+padding: 6px;
+transition: background 0.2s ease;
+}
+    
+/* Add Smooth Slide Animation */
+
+.browse-dropdown {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 40px;
+}
+    
+.browse-dropdown.show {
+padding: 30px 40px;
+max-height: 1000px; /* enough room for content */
+}
+
+
