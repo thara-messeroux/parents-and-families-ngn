@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Attach listeners if elements exist
     if (browseBtn) browseBtn.addEventListener('click', toggleDropdown);
     if (mobileToggle) mobileToggle.addEventListener('click', toggleDropdown);
-  });
-  
+});
+
+
 
 
 
