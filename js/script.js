@@ -1,10 +1,18 @@
-// 🧠 Step 1: Grab the Browse button and dropdown
-const browseBtn = document.querySelector('.browse-menu');
-const dropdown = document.getElementById('browse-dropdown');
-
-// 🧠 Step 2: Add a click event to the button
-browseBtn.addEventListener('click', () => {
-  // 🧠 Step 3: Toggle the dropdown menu on/off
-  dropdown.classList.toggle('show');
-});
+// Wait until DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    // Target both desktop and mobile triggers
+    const browseBtn = document.querySelector('.browse-menu');        // desktop
+    const mobileToggle = document.getElementById('hamburger-toggle'); // mobile
+    const dropdown = document.getElementById('browse-dropdown');     // dropdown menu
+  
+    // Shared function to toggle dropdown
+    const toggleDropdown = () => {
+      dropdown.classList.toggle('show');
+    };
+  
+    // Attach listeners if elements exist
+    if (browseBtn) browseBtn.addEventListener('click', toggleDropdown);
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleDropdown);
+  });
+  
 

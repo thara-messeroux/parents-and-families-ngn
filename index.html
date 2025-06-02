@@ -9,6 +9,7 @@
   <!-- Loads Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+
   <!-- Links to external CSS and JS -->
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
@@ -37,57 +38,67 @@
     </div>
   </header>
 
-  <!-- ✅ Desktop Header Only -->
-  <div class="second-header desktop-header">
+<!-- Desktop Header Only -->
+<div class="second-header desktop-header">
     <div class="second-header-left">June 14, 2025</div>
     <div class="second-header-center">
-      <img src="images/ngn-logo.png" alt="NGN Logo" class="ngn-logo" />
-      <span class="logo-title">
-        <span class="logo-black">Parents and Families</span>
-        <span class="logo-red">News Hub</span>
-      </span>
-    </div>
+        <img src="images/ngn-logo.png" alt="NGN Logo" class="ngn-logo" />
+        <span class="logo-title">
+          <span class="logo-black">Parents and Families</span>
+          <span class="logo-red">News Hub</span>
+        </span>
+      </div>
+      
     <div class="second-header-right">
       <span class="browse-menu">Browse ▾</span>
       <img class="search-icon" src="https://cdn.jsdelivr.net/gh/feathericons/feather/icons/search.svg" alt="Search Icon" />
     </div>
   </div>
 
-  <!-- 🧠 ADDED: Browse Dropdown Menu (hidden by default, toggled with JS) -->
-  <div id="browse-dropdown" class="browse-dropdown">
-    <div class="browse-section">
-      <h4>Key dates and events</h4>
-      <p>Important dates for your student’s journey, like move-in day or family weekend.</p>
-    </div>
-    <div class="browse-section">
-      <h4>Academics and support</h4>
-      <p>Helpful services like advising, tutoring, and co-ops for academic success.</p>
-    </div>
-    <div class="browse-section">
-      <h4>Finances and billing</h4>
-      <p>Guides and tools to help you handle tuition, aid, and payments confidently.</p>
-    </div>
-    <div class="browse-section">
-      <h4>Campus life and safety</h4>
-      <p>What life looks like on campus, including housing, dining, and staying safe.</p>
-    </div>
-    <div class="browse-section">
-      <h4>Family guides</h4>
-      <p>Tips and resources to support your student’s start at Northeastern.</p>
-    </div>
-  </div> <!-- ✅ closes ONLY the #browse-dropdown -->
-
-  <!-- ✅ Mobile Header Only -->
-  <div class="second-header mobile-header">
+  
+  <!-- Mobile Header Only (Cleaned Up) -->
+<div class="second-header mobile-header">
+    <!-- Left: Date -->
     <div class="second-header-left">June 14, 2025</div>
+  
+    <!-- Center: NGN + Arrow -->
     <div class="second-header-center">
       <span class="mobile-logo">NGN</span>
       <img class="mobile-arrow" src="images/ngn-arrow.png" alt="NGN Arrow Icon">
+
     </div>
+  
+    <!-- Right: Hamburger Menu -->
     <div class="second-header-right">
-      <img class="hamburger-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" alt="Menu Icon">
+      <img id="hamburger-toggle"  class="hamburger-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" alt="Menu Icon">
     </div>
   </div>
+  
+  
+    <!-- 🧠 ADDED: Browse Dropdown Menu -->
+    <div id="browse-dropdown" class="browse-dropdown">
+    <div class="browse-section">
+        <h4>Key dates and events</h4>
+        <p>Important dates for your student’s journey, like move-in day or family weekend.</p>
+    </div>
+    <div class="browse-section">
+        <h4>Academics and support</h4>
+        <p>Helpful services like advising, tutoring, and co-ops for academic success.</p>
+    </div>
+    <div class="browse-section">
+        <h4>Finances and billing</h4>
+        <p>Guides and tools to help you handle tuition, aid, and payments confidently.</p>
+    </div>
+    <div class="browse-section">
+        <h4>Campus life and safety</h4>
+        <p>What life looks like on campus, including housing, dining, and staying safe.</p>
+    </div>
+    <div class="browse-section">
+        <h4>Family guides</h4>
+        <p>Tips and resources to support your student’s start at Northeastern.</p>
+    </div>
+    </div>
+    </div>
 
   <!-- 🎯 Main Hero Section: Title, Text + Custom Image Grid -->
   <section class="hero-split">
@@ -101,6 +112,7 @@
 
     <!-- Image Grid Container -->
     <div class="hero-gallery">
+      <!-- Each image with custom class for layout -->
       <div class="photo photo-1">
         <img src="images/Stuff-A-Husky-London-1400.webp" alt="Students smiling and holding husky plush toys indoors">
       </div>

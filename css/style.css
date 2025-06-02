@@ -2,562 +2,567 @@
 
 /* Basic reset and global settings */
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: white; /* Makes the full page white */
-    width: 100%;
-    height: 100%;
-    font-family: 'Inter', sans-serif;
-    color: white; /* Default text color, often overridden locally */
-  }
+margin: 0;
+padding: 0;
+background-color: white; /* Makes the full page white */
+width: 100%;
+height: 100%;
+font-family: 'Inter', sans-serif;
+color: white; /* Default text color, often overridden locally */
+}
+
+/* === 🖥️ MAIN HEADER (TOP NAVIGATION BAR) === */
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: #1a1a1a; /* Dark header background */
+}
+
+.nav-left, .nav-right {
+display: flex;
+align-items: center;
+gap: 20px; /* Space between links */
+}
+
+.nav-left a, .nav-right a {
+color: white;
+text-decoration: none;
+font-size: 14px;
+}
+
+.nav-right a img {
+width: 18px;
+height: 18px;
+filter: brightness(0) invert(1); /* Turns logos white */
+}
+
+.nav-left a:hover, .nav-right a:hover {
+text-decoration: underline;
+}
+
+/* === 📱 HIDE MAIN HEADER ON MOBILE/TABLET === */
+@media (max-width: 1024px) {
+.main-header {
+    display: none;
+}
+}
   
-  /* === 🖥️ MAIN HEADER (TOP NAVIGATION BAR) === */
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #1a1a1a; /* Dark header background */
-  }
-  
-  .nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between links */
-  }
-  
-  .nav-left a, .nav-right a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .nav-right a img {
-    width: 18px;
-    height: 18px;
-    filter: brightness(0) invert(1); /* Turns logos white */
-  }
-  
-  .nav-left a:hover, .nav-right a:hover {
-    text-decoration: underline;
-  }
-  
-  /* === 📱 HIDE MAIN HEADER ON MOBILE/TABLET === */
-  @media (max-width: 1024px) {
-    .main-header {
-      display: none;
-    }
-  }
-  
-  
-  /* === 📰 SECONDARY HEADER (Sticky Bar with Logo) === */
-  .second-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 24px;
-    background-color: white;
-    color: black;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  /* Left section - shows date */
-  .second-header .date {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  /* Center section - logo and arrow */
-  .second-header .logo {
-    display: flex;
-    align-items: center;
-    font-size: 35px;
-    font-weight: 600;
-    gap: 5px;
-  }
-  
-  .second-header .logo .arrow {
-    color: #c8102e; /* Northeastern red */
-    font-size: 20px;
-  }
-  
-  /* Right section - search and menu icons */
-  .second-header .icons {
-    display: flex;
-    gap: 18px;
-    font-size: 18px;
-  }
-  
-  .second-header .icons .icon {
-    cursor: pointer;
-    color: black;
-  }
-  
-  .second-header .icons img.icon {
-    width: 16px;
-    height: 16px;
-    filter: brightness(0); /* Makes icons black */
-    cursor: pointer;
-  }
-  
-  .menu-icon {
-    width: 18px;
-    height: 18px;
-  }
+/* === 📰 SECONDARY HEADER (Sticky Bar with Logo) === */
+.second-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 14px 24px;
+background-color: white;
+color: black;
+border-bottom: 1px solid #e0e0e0;
+}
+
+/* Left section - shows date */
+.second-header .date {
+font-size: 14px;
+color: #333;
+}
+
+/* Center section - logo and arrow */
+.second-header .logo {
+display: flex;
+align-items: center;
+font-size: 35px;
+font-weight: 600;
+gap: 5px;
+}
+
+.second-header .logo .arrow {
+color: #c8102e; /* Northeastern red */
+font-size: 20px;
+}
+
+/* Right section - search and menu icons */
+.second-header .icons {
+display: flex;
+gap: 18px;
+font-size: 18px;
+}
+
+.second-header .icons .icon {
+cursor: pointer;
+color: black;
+}
+
+.second-header .icons img.icon {
+width: 16px;
+height: 16px;
+filter: brightness(0); /* Makes icons black */
+cursor: pointer;
+}
+
+.menu-icon {
+width: 18px;
+height: 18px;
+}
 
 
-  /* NGN logo in desktop header */
+/* NGN logo in desktop header */
 .ngn-logo {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-  
-  
-  /* === 💬 HERO SECTION: TEXT + IMAGE GALLERY === */
-  .hero-split {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 60px 40px;
-    background-color: white;
-    color: black;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: 0 auto; /* Center on large screens */
-  }
-  
-  /* === 📝 Hero Text Block === */
-  .hero-text {
-    flex: 1;
-    max-width: 40%;
-  }
-  
-  .hero-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .hero-text p {
-    font-size: 22px;
-    line-height: 2;
-    color: #222;
-  }
-  
-  
-  /* === 🖼️ Organic Image Gallery === */
-  .hero-gallery {
+width: 28px;
+height: 28px;
+object-fit: contain;
+margin-right: 10px;
+vertical-align: middle;
+}
+
+
+/* === 💬 HERO SECTION: TEXT + IMAGE GALLERY === */
+.hero-split {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 40px;
+padding: 60px 40px;
+background-color: white;
+color: black;
+flex-wrap: wrap;
+max-width: 1400px;
+margin: 0 auto; /* Center on large screens */
+}
+
+/* === 📝 Hero Text Block === */
+.hero-text {
+flex: 1;
+max-width: 40%;
+}
+
+.hero-text h2 {
+font-family: 'Playfair Display', serif;
+font-size: 50px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.hero-text p {
+font-size: 22px;
+line-height: 2;
+color: #222;
+}
+
+
+/* === 🖼️ Organic Image Gallery === */
+.hero-gallery {
+position: relative;
+width: 600px;
+height: 600px;
+margin-left: auto;
+}
+
+.hero-gallery .photo {
+position: absolute;
+border-radius: 12px;
+overflow: hidden;
+}
+
+.hero-gallery img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+border-radius: 12px;
+}
+
+
+/* === 🧩 Custom Image Layout (Playful Layout) === */
+
+.photo-1 { top: 0; left: 0; width: 160px; height: 120px; z-index: 2; }
+.photo-2 { top: -10px; left: 170px; width: 140px; height: 160px; z-index: 1; }
+.photo-3 { top: 20px; left: 320px; width: 150px; height: 100px; }
+.photo-4 { top: 140px; left: 40px; width: 170px; height: 190px; z-index: 2; }
+.photo-5 { top: 170px; left: 230px; width: 150px; height: 150px; z-index: 3; }
+.photo-6 { top: 200px; left: 390px; width: 140px; height: 160px; }
+.photo-7 { top: 340px; left: 20px; width: 130px; height: 130px; z-index: 1; }
+.photo-8 { top: 350px; left: 170px; width: 170px; height: 120px; }
+.photo-9 { top: 390px; left: 340px; width: 160px; height: 140px; }
+
+
+/* === 📱 MOBILE & TABLET STYLES (max-width: 1024px) === */
+@media (max-width: 1024px) {
+
+/* 🛠️ FIX: Ensure .logo-text also scales down properly on mobile */
+.logo-text {
+    font-size: 30px !important; /* 📱✅ Shrinks logo text more reliably on mobile */
+    }
+
+.hero-split {
+    flex-direction: column;
+    padding: 40px 16px;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.hero-gallery {
     position: relative;
-    width: 600px;
-    height: 600px;
-    margin-left: auto;
-  }
-  
-  .hero-gallery .photo {
+    width: 100%;
+    max-width: 360px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.hero-gallery .photo {
     position: absolute;
     border-radius: 12px;
     overflow: hidden;
-  }
-  
-  .hero-gallery img {
+}
+
+.hero-gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     border-radius: 12px;
-  }
-  
-  
-  /* === 🧩 Custom Image Layout (Playful Layout) === */
-  
-  .photo-1 { top: 0; left: 0; width: 160px; height: 120px; z-index: 2; }
-  .photo-2 { top: -10px; left: 170px; width: 140px; height: 160px; z-index: 1; }
-  .photo-3 { top: 20px; left: 320px; width: 150px; height: 100px; }
-  .photo-4 { top: 140px; left: 40px; width: 170px; height: 190px; z-index: 2; }
-  .photo-5 { top: 170px; left: 230px; width: 150px; height: 150px; z-index: 3; }
-  .photo-6 { top: 200px; left: 390px; width: 140px; height: 160px; }
-  .photo-7 { top: 340px; left: 20px; width: 130px; height: 130px; z-index: 1; }
-  .photo-8 { top: 350px; left: 170px; width: 170px; height: 120px; }
-  .photo-9 { top: 390px; left: 340px; width: 160px; height: 140px; }
+    display: block;
+}
 
+/* Scaled-down version of the playful layout */
+.photo-1 { top: 0; left: 0; width: 120px; height: 90px; z-index: 2; }
+.photo-2 { top: -8px; left: 130px; width: 100px; height: 120px; z-index: 1; }
+.photo-3 { top: 10px; left: 240px; width: 100px; height: 80px; }
+.photo-4 { top: 100px; left: 20px; width: 130px; height: 140px; z-index: 2; }
+.photo-5 { top: 130px; left: 160px; width: 110px; height: 110px; z-index: 3; }
+.photo-6 { top: 150px; left: 270px; width: 90px; height: 120px; }
+.photo-7 { top: 260px; left: 0px; width: 100px; height: 100px; z-index: 1; }
+.photo-8 { top: 275px; left: 120px; width: 120px; height: 90px; }
+.photo-9 { top: 300px; left: 240px; width: 110px; height: 100px; }
+}
 
-  /* === 📱 MOBILE & TABLET STYLES (max-width: 1024px) === */
-  @media (max-width: 1024px) {
-
-    /* 🛠️ FIX: Ensure .logo-text also scales down properly on mobile */
-    .logo-text {
-        font-size: 30px !important; /* 📱✅ Shrinks logo text more reliably on mobile */
-        }
-  
-    .hero-split {
-      flex-direction: column;
-      padding: 40px 16px;
-      align-items: center;
-    }
-  
-    .hero-text {
-      max-width: 100%;
-      text-align: center;
-      margin-bottom: 32px;
-    }
-  
-    .hero-gallery {
-      position: relative;
-      width: 100%;
-      max-width: 360px;
-      height: 500px;
-      margin: 0 auto;
-    }
-  
-    .hero-gallery .photo {
-      position: absolute;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-  
-    .hero-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-      display: block;
-    }
-  
-    /* Scaled-down version of the playful layout */
-    .photo-1 { top: 0; left: 0; width: 120px; height: 90px; z-index: 2; }
-    .photo-2 { top: -8px; left: 130px; width: 100px; height: 120px; z-index: 1; }
-    .photo-3 { top: 10px; left: 240px; width: 100px; height: 80px; }
-    .photo-4 { top: 100px; left: 20px; width: 130px; height: 140px; z-index: 2; }
-    .photo-5 { top: 130px; left: 160px; width: 110px; height: 110px; z-index: 3; }
-    .photo-6 { top: 150px; left: 270px; width: 90px; height: 120px; }
-    .photo-7 { top: 260px; left: 0px; width: 100px; height: 100px; z-index: 1; }
-    .photo-8 { top: 275px; left: 120px; width: 120px; height: 90px; }
-    .photo-9 { top: 300px; left: 240px; width: 110px; height: 100px; }
-  }
-
-  @media (max-width: 767px) {
-
-    .second-header-center {
-        justify-content: center; /* 📱✅ Center NGN on small screens */
-      }
-
-      .logo-text::before {
-        content: "NGN"; /* 🛠️ Mobile-only text swap */
-        display: inline;
-      }
-      
-      .logo-text {
-        font-size: 0; /* Hides original text */
-      }
-            
-    .second-header-center {
-      font-size: 14px;
-    }
-  
-    .arrow-icon {
-      width: 12px;
-      height: 12px;
-    }
-  
-    /* ✅ Mobile-only NGN logo replacement */
-    .logo-text {
-      position: relative;
-      display: inline-block;
-      color: transparent; /* Hides original text but still readable by screen readers */
-    }
-  
-    .logo-text::before {
-      content: "NGN";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: black;
-      font-size: 30px;
-    }
-    
-  }
-
-  /* === 🆕 NEW STYLES for updated second-header === */
+@media (max-width: 767px) {
 
 .second-header-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex: 1;
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: bold;
+    justify-content: center; /* 📱✅ Center NGN on small screens */
+    }
+
+    .logo-text::before {
+    content: "NGN"; /* 🛠️ Mobile-only text swap */
+    display: inline;
+    }
+    
+    .logo-text {
+    font-size: 0; /* Hides original text */
+    }
+        
+.second-header-center {
+    font-size: 14px;
+}
+
+.arrow-icon {
+    width: 12px;
+    height: 12px;
+}
+
+/* ✅ Mobile-only NGN logo replacement */
+.logo-text {
+    position: relative;
+    display: inline-block;
+    color: transparent; /* Hides original text but still readable by screen readers */
+}
+
+.logo-text::before {
+    content: "NGN";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: black;
+    font-size: 30px;
+}
+
+}
+
+/* === 🆕 NEW STYLES for updated second-header === */
+
+.second-header-center {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+flex: 1;
+font-family: 'Playfair Display', serif;
+font-size: 24px;
+font-weight: bold;
+text-align: center;
+}
+
+.logo-title {
+font-size: 35px; /* ⬅️ This specifically targets the "Parents and Families News Hub" text */
+}
+
+.logo-title .full-title {
+font-size: 24px;
+}
+
+.highlight {
+color: #c8102e;
+}
+
+/* 🔽 Optional: Style for Browse */
+.browse {
+font-weight: bold;
+font-size: 16px;
+cursor: pointer;
+}
+
+/* ✅ MOBILE styles */
+@media (max-width: 767px) {
+.second-header {
+    flex-direction: column;
     text-align: center;
-  }
-  
-  .logo-title {
-    font-size: 35px; /* ⬅️ This specifically targets the "Parents and Families News Hub" text */
-  }
-  
-  .logo-title .full-title {
-    font-size: 24px;
-  }
-  
-  .highlight {
-    color: #c8102e;
-  }
-  
-  /* 🔽 Optional: Style for Browse */
-  .browse {
-    font-weight: bold;
+}
+
+.second-header-left,
+.second-header-right {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.second-header-center {
+    width: 100%;
+    font-size: 18px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px;
+}
+
+.logo-title .full-title {
+    font-size: 18px;
+}
+
+.arrow-icon {
+    width: 14px;
+    height: 14px;
+}
+}
+
+/* ✅ Main second-header layout */
+.second-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 24px;
+background-color: white;
+border-bottom: 1px solid #eee;
+font-family: 'Inter', sans-serif;
+color: black;
+}
+
+/* ✅ Left date */
+.second-header-left {
+font-size: 14px;
+}
+
+/* ✅ Center logo and title */
+.second-header-center {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 22px;
+font-weight: bold;
+font-family: 'Playfair Display', serif;
+}
+
+.arrow-icon {
+width: 20px;
+height: 20px;
+}
+
+/* ✅ Colored title styling */
+.logo-black {
+color: black;
+}
+
+.logo-red {
+color: #c8102e; /* Northeastern red */
+}
+
+/* ✅ Right menu */
+.second-header-right {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.browse-menu {
+font-weight: 600;
+font-size: 14px;
+}
+
+.search-icon {
+width: 18px;
+height: 18px;
+filter: brightness(0); /* ensures black */
+}
+
+/* ✅ Mobile-friendly layout */
+@media (max-width: 767px) {
+.second-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.second-header-left,
+.second-header-right {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.second-header-center {
     font-size: 16px;
-    cursor: pointer;
-  }
-  
-  /* ✅ MOBILE styles */
-  @media (max-width: 767px) {
-    .second-header {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .second-header-left,
-    .second-header-right {
-      width: 100%;
-      margin-top: 8px;
-    }
-  
-    .second-header-center {
-      width: 100%;
-      font-size: 18px;
-      flex-direction: row;
-      justify-content: center;
-      gap: 6px;
-    }
-  
-    .logo-title .full-title {
-      font-size: 18px;
-    }
-  
-    .arrow-icon {
-      width: 14px;
-      height: 14px;
-    }
-  }
-  
-  /* ✅ Main second-header layout */
+    justify-content: center;
+}
+
+.arrow-icon {
+    width: 14px;
+    height: 14px;
+}
+}
+
+/* ✅ Base layout for second-header */
 .second-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    background-color: white;
-    border-bottom: 1px solid #eee;
-    font-family: 'Inter', sans-serif;
-    color: black;
-  }
-  
-  /* ✅ Left date */
-  .second-header-left {
-    font-size: 14px;
-  }
-  
-  /* ✅ Center logo and title */
-  .second-header-center {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-  }
-  
-  .arrow-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* ✅ Colored title styling */
-  .logo-black {
-    color: black;
-  }
-  
-  .logo-red {
-    color: #c8102e; /* Northeastern red */
-  }
-  
-  /* ✅ Right menu */
-  .second-header-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  
-  .browse-menu {
-    font-weight: 600;
-    font-size: 14px;
-  }
-  
-  .search-icon {
-    width: 18px;
-    height: 18px;
-    filter: brightness(0); /* ensures black */
-  }
-  
-  /* ✅ Mobile-friendly layout */
-  @media (max-width: 767px) {
-    .second-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .second-header-left,
-    .second-header-right {
-      font-size: 12px;
-      margin-top: 4px;
-    }
-  
-    .second-header-center {
-      font-size: 16px;
-      justify-content: center;
-    }
-  
-    .arrow-icon {
-      width: 14px;
-      height: 14px;
-    }
-  }
-  
-  /* ✅ Base layout for second-header */
-.second-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    background-color: white;
-    border-bottom: 1px solid #eee;
-    font-family: 'Inter', sans-serif;
-    color: black;
-  }
-  
-  /* Left: Date */
-  .second-header-left {
-    font-size: 14px;
-  }
-  
-  /* Center: NGN + Arrow */
-  .second-header-center {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-weight: 700;
-    font-size: 24px;
-  }
-  
-  .mobile-logo {
-    font-weight: 700;
-  }
-  
-  .mobile-arrow {
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
-  }
-  
-  /* Right: Hamburger icon */
-  .hamburger-icon {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0.3); /* Matches faded style */
-  }
-  
-  
-  /* ✅ Only show the desktop header on large screens */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 16px;
+background-color: white;
+border-bottom: 1px solid #eee;
+font-family: 'Inter', sans-serif;
+color: black;
+}
+
+/* Left: Date */
+.second-header-left {
+font-size: 14px;
+}
+
+/* Center: NGN + Arrow */
+.second-header-center {
+display: flex;
+align-items: center;
+gap: 4px;
+font-weight: 700;
+font-size: 24px;
+}
+
+.mobile-logo {
+font-weight: 700;
+}
+
+.mobile-arrow {
+width: 16px;
+height: 16px;
+margin-top: 2px;
+}
+
+/* Right: Hamburger icon */
+.hamburger-icon {
+width: 24px;
+height: 24px;
+filter: brightness(0.3); /* Matches faded style */
+}
+
+
+/* ✅ Only show the desktop header on large screens */
 .desktop-header {
-    display: flex;
-  }
+display: flex;
+}
+
+.mobile-header {
+display: none;
+}
   
-  .mobile-header {
+@media (max-width: 767px) {
+/* ✅ On mobile: show mobile, hide desktop */
+.desktop-header {
     display: none;
-  }
-  
-  @media (max-width: 767px) {
-    /* ✅ On mobile: show mobile, hide desktop */
-    .desktop-header {
-      display: none;
-    }
-  
-    .mobile-header {
-      display: flex;
-    }
-  }
+}
+
+.mobile-header {
+    display: flex;
+}
+}
   
 
 
 /* ✅ Cleaner and more centered mobile header like wireframe */
 @media (max-width: 767px) {
     .mobile-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      position: relative;
-      background-color: white;
-      border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        position: relative;
+        background-color: white;
+        border-bottom: 1px solid #eee;
     }
-  
-    .mobile-header .second-header-left {
-      font-size: 14px;
-      flex: 1;
-      text-align: left;
-      font-weight: 500;
-      color: black;
-    }
-  
-    .mobile-header .second-header-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-  
-    .mobile-logo {
-      font-size: 40px;
-      font-weight: 650;
-      font-family: 'Inter', sans-serif;
-      color: black;
-    }
-  
-    .mobile-arrow {
-      width: 16px;
-      height: 16px;
-      margin-top: 1px;
-    }
-  
-    .mobile-header .second-header-right {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .hamburger-icon {
-      width: 20px;
-      height: 20px;
-      filter: brightness(0);
-    }
-  }
-  
-  
-  /* Make sure header can hold the menu */
-  .second-header {
-    position: relative;
-  }
 
+    .mobile-header .second-header-left {
+        font-size: 14px;
+        flex: 1;
+        text-align: left;
+        font-weight: 500;
+        color: black;
+    }
+
+    .mobile-header .second-header-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .mobile-logo {
+        font-size: 40px;
+        font-weight: 650;
+        font-family: 'Inter', sans-serif;
+        color: black;
+    }
+
+    .mobile-arrow {
+        width: 16px;
+        height: 16px;
+        margin-top: 1px;
+    }
+
+    .mobile-header .second-header-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .hamburger-icon {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0);
+    }
+
+    .browse-dropdown {
+        position: relative !important; /* 🐞 force it into flow */
+        top: auto !important;          /* 🐞 remove absolute positioning */
+        margin-top: 0 !important;      /* 🐞 reset any offsets */
+      }
+}
+
+
+/* Make sure header can hold the menu */
+.second-header {
+position: relative;
+}
 
 
   /* === 🌐 GENERAL LAYOUT & STYLING === */
@@ -572,7 +577,6 @@ html, body {
     font-family: 'Inter', sans-serif;
     color: white;
 }
-
 
 .browse-item {
   flex: 1 1 45%; /* 📐 Two-column layout */
@@ -703,5 +707,4 @@ transition: background 0.2s ease;
 padding: 30px 40px;
 max-height: 1000px; /* enough room for content */
 }
-
 
