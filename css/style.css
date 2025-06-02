@@ -105,6 +105,16 @@ html, body {
     width: 18px;
     height: 18px;
   }
+
+
+  /* NGN logo in desktop header */
+.ngn-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
   
   
   /* === 💬 HERO SECTION: TEXT + IMAGE GALLERY === */
@@ -230,22 +240,315 @@ html, body {
     .photo-8 { top: 275px; left: 120px; width: 120px; height: 90px; }
     .photo-9 { top: 300px; left: 240px; width: 110px; height: 100px; }
   }
-  
 
+  @media (max-width: 767px) {
 
-/* === MOBILE ONLY STYLES (Below 768px) === */
-@media (max-width: 767px) {
     .second-header-center {
-      font-size: 14px; /* Shrinks logo text on small mobile screens 📱✅ */
+        justify-content: center; /* 📱✅ Center NGN on small screens */
+      }
+
+      .logo-text::before {
+        content: "NGN"; /* 🛠️ Mobile-only text swap */
+        display: inline;
+      }
+      
+      .logo-text {
+        font-size: 0; /* Hides original text */
+      }
+            
+    .second-header-center {
+      font-size: 14px;
     }
   
     .arrow-icon {
       width: 12px;
-      height: 12px; /* Shrinks arrow icon on mobile 📱✅ */
+      height: 12px;
     }
   
-    /* 🛠️ FIX: Ensure .logo-text also scales down properly on mobile */
+    /* ✅ Mobile-only NGN logo replacement */
     .logo-text {
-      font-size: 20px !important; /* 📱✅ Shrinks logo text more reliably on mobile */
+      position: relative;
+      display: inline-block;
+      color: transparent; /* Hides original text but still readable by screen readers */
+    }
+  
+    .logo-text::before {
+      content: "NGN";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: black;
+      font-size: 30px;
+    }
+    
+  }
+
+  /* === 🆕 NEW STYLES for updated second-header === */
+
+.second-header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .logo-title {
+    font-size: 35px; /* ⬅️ This specifically targets the "Parents and Families News Hub" text */
+  }
+  
+  .logo-title .full-title {
+    font-size: 24px;
+  }
+  
+  .highlight {
+    color: #c8102e;
+  }
+  
+  /* 🔽 Optional: Style for Browse */
+  .browse {
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* ✅ MOBILE styles */
+  @media (max-width: 767px) {
+    .second-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .second-header-left,
+    .second-header-right {
+      width: 100%;
+      margin-top: 8px;
+    }
+  
+    .second-header-center {
+      width: 100%;
+      font-size: 18px;
+      flex-direction: row;
+      justify-content: center;
+      gap: 6px;
+    }
+  
+    .logo-title .full-title {
+      font-size: 18px;
+    }
+  
+    .arrow-icon {
+      width: 14px;
+      height: 14px;
     }
   }
+  
+  /* ✅ Main second-header layout */
+.second-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    font-family: 'Inter', sans-serif;
+    color: black;
+  }
+  
+  /* ✅ Left date */
+  .second-header-left {
+    font-size: 14px;
+  }
+  
+  /* ✅ Center logo and title */
+  .second-header-center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* ✅ Colored title styling */
+  .logo-black {
+    color: black;
+  }
+  
+  .logo-red {
+    color: #c8102e; /* Northeastern red */
+  }
+  
+  /* ✅ Right menu */
+  .second-header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .browse-menu {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .search-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0); /* ensures black */
+  }
+  
+  /* ✅ Mobile-friendly layout */
+  @media (max-width: 767px) {
+    .second-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .second-header-left,
+    .second-header-right {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  
+    .second-header-center {
+      font-size: 16px;
+      justify-content: center;
+    }
+  
+    .arrow-icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  /* ✅ Base layout for second-header */
+.second-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    font-family: 'Inter', sans-serif;
+    color: black;
+  }
+  
+  /* Left: Date */
+  .second-header-left {
+    font-size: 14px;
+  }
+  
+  /* Center: NGN + Arrow */
+  .second-header-center {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  
+  .mobile-logo {
+    font-weight: 700;
+  }
+  
+  .mobile-arrow {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+  }
+  
+  /* Right: Hamburger icon */
+  .hamburger-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0.3); /* Matches faded style */
+  }
+  
+  
+  /* ✅ Only show the desktop header on large screens */
+.desktop-header {
+    display: flex;
+  }
+  
+  .mobile-header {
+    display: none;
+  }
+  
+  @media (max-width: 767px) {
+    /* ✅ On mobile: show mobile, hide desktop */
+    .desktop-header {
+      display: none;
+    }
+  
+    .mobile-header {
+      display: flex;
+    }
+  }
+  
+
+
+/* ✅ Cleaner and more centered mobile header like wireframe */
+@media (max-width: 767px) {
+    .mobile-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      position: relative;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .mobile-header .second-header-left {
+      font-size: 14px;
+      flex: 1;
+      text-align: left;
+      font-weight: 500;
+      color: black;
+    }
+  
+    .mobile-header .second-header-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  
+    .mobile-logo {
+      font-size: 40px;
+      font-weight: 650;
+      font-family: 'Inter', sans-serif;
+      color: black;
+    }
+  
+    .mobile-arrow {
+      width: 16px;
+      height: 16px;
+      margin-top: 1px;
+    }
+  
+    .mobile-header .second-header-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .hamburger-icon {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0);
+    }
+  }
+  
